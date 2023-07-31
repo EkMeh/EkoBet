@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+.game 
+{
+    width: 1920px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.teams{
+    width: 500px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.team-box
+{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.team-box img{ width: 100%; height: auto; }
+
+.match
+{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 60px;
+}
+
+.match .teamA img, .match.teamB img {width: 100%; height: auto;}
+
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+
+}
+
+.match .goal{
+    font-size: 40px;
+    font-weight: bold;
+    color: #FF4500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    position: absolute;
+    letter-spacing: 10px;
+    bottom: 20px;
+    left: 32%;
+    transform: translateX(-50%); 
+    color: var(--text-color, #FF4500);
+}
+
+.match .goal.active{
+    animation: goooaall 2s forwards;
+}
+
+@keyframes goooaall {
+    0% {
+      opacity: 0;
+      transform: scale(.5);
+      --text-color: #FF4500;
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+      --text-color: #00FF00; 
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+      --text-color: #FF0000;
+    }
+}
+
+.matchcoef{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.matchcoef button{margin: 10px 0; padding: 5px 20px; border-radius: 4px; border: none; background: black; color: white; font-weight: bolder; cursor: pointer;}
+
+.suggestions{
+    display: flex;
+    font-size: 24px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.bidding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bidding input{width: 45px;}
+
+.result-box
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+#counter{
+    top: 60%;
+    left: 46.5%;
+    font-size: 24px;
+    display: block;
+}
